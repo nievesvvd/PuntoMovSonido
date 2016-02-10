@@ -10,10 +10,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.nieves.puntomovsonido.PtoMovSonido"
-    tools:showIn="@layout/activity_pto_mov_sonido">
+    tools:showIn="@layout/activity_pto_mov_sonido"
+    android:gravity="center_vertical|center_horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/instrucciones"
+        android:textSize="45dp"/>
 </RelativeLayout>
