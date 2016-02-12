@@ -11,7 +11,7 @@ Desde 15-Ene-2016 hasta 15-Feb-2016
 ### Breve descripción de la practica.
 Para la realizacion de esta práctica, se programarán cinco aplicaciones android diferentes de forma que, cada una hace uso de los distintos sensores que posee el dispositivo android.
 ### Descripción del problema.
-Esta aplicación consiste en, una vez se ha realizado un patrón específico, el dispositivo lo reconocerá y se reproducirá un sonido determinado. En este caso el patrón de movimiento consiste en mover el dispositivo rápidamente en el eje X, como si de un látigo se tratase.
+Esta aplicación consiste en, una vez se ha realizado un patrón de movimiento específico, el dispositivo lo reconocerá y se reproducirá un sonido determinado. En este caso el patrón de movimiento consiste en mover el dispositivo rápidamente en el eje X, como si de un látigo se tratase.
 ###Clases.
 En este caso, solo ha sido necesario usar una clase **PtoMovSonido**.
 En esta clase, se crea la actividad en su totalidad, desde esperar los cambios del acelerometro hasta inicializar el reproductor para que se escuche el sonido. Tambien se implementa un **Toast** que aparece en caso de que el volumen del dispositivo esté demasiado bajo. Esta clase se extiende de **AppCompatActivity** para poder crear la actividad e implementa metodos de **SensorEventListener** con los que poder usar los sensores, en este caso, el acelerómetro.
