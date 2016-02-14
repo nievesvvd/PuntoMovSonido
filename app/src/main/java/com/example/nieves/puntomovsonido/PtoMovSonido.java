@@ -81,7 +81,7 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
     }
 
     public void reproducirSonido() {
-        CharSequence texto = "Por favor, suba el volumen";
+        CharSequence texto = getString(R.string.volume);
         int duracion = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(this, texto, duracion);
         AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
