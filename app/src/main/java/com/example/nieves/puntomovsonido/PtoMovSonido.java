@@ -1,18 +1,19 @@
 /*
- *  Copyright (C) 2015, 2016 - Samuel Peregrina Morillas <gaedr@correo.ugr.es>, Nieves V. Velásquez Díaz <nievesvvd@correo.ugr.es>
+ *   Copyright (C) 2015, 2016 - Samuel Peregrina Morillas <gaedr@correo.ugr.es>, Nieves V. Velásquez Díaz <nievesvvd@correo.ugr.es>
  *
- *  This program is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ *   This program is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *   This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *   You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package com.example.nieves.puntomovsonido;
 
 import android.hardware.Sensor;
@@ -60,7 +61,6 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
-        //vemos si se han cambiado los valores x,y,z del acelerometro
         float valX = Math.abs(lastX - event.values[0]);
         float valY = Math.abs(lastY - event.values[1]);
         float valZ = Math.abs(lastZ - event.values[2]);
@@ -72,12 +72,9 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
             valY = 0;
             valZ = 0;
         } else {
-            //reproducimos el sonido
             reproducirSonido();
         }
 
-
-        //guardamos los ultimos valores de x,y,z conocidos
         lastX = event.values[0];
         lastY = event.values[1];
         lastZ = event.values[2];
@@ -90,7 +87,6 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
         AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
         int volume_level = am.getStreamVolume(AudioManager.STREAM_MUSIC);
         try {
-            //si el volumen esta bajo, mostrara el mensaje
             if (volume_level < 5) {
                 toast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM, 0, 0);
                 toast.show();
