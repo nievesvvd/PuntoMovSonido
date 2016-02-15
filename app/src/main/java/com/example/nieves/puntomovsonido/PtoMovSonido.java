@@ -57,7 +57,7 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
      * Metodo que es llamado cada vez que un sensor manda informacion, si el movil esta en una
      * posicion determinada, suena y no vuelve a sonar hasta que cambia
      *
-     * @param event
+     * @param event evento producido, en este caso es el acelerometro el que pasa el evento
      */
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -102,8 +102,8 @@ public class PtoMovSonido extends AppCompatActivity implements SensorEventListen
      * Metodo que necesita SensorEventListener
      * pero que no es necesario sobreescribirlo luego lo dejamos como esta
      *
-     * @param sensor
-     * @param accuracy
+     * @param sensor    el sensor con el que trabaja
+     * @param accuracy  la precision con la que se mueve el sensor
      */
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
